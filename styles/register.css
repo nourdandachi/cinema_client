@@ -1,0 +1,82 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+    background: -webkit-linear-gradient(bottom, #521C0D, #c67024, #F4E7E1);
+
+}
+.container {
+  position: relative;
+  max-width: 450px;
+  min-width: 200px;
+  width: 100%;
+  background: #F4E7E1;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  font-size: 1.5rem;
+  color: #521C0D;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.container .form {
+  margin-top: 20px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #521C0D;
+}
+.form :where(.input-box input) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #521C0D;
+  margin-top: 8px;
+  border: 1px solid #c67024;
+  border-radius: 6px;
+  padding: 0 15px;
+  background-color: #F4E7E1;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #F4E7E1;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #D5451B;
+}
+.form button:hover {
+  background: #FF9B45;
+}
+
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+}
