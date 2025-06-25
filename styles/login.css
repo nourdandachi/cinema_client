@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-    background: -webkit-linear-gradient(bottom, #521C0D, #c67024, #F4E7E1);
+    background: -webkit-linear-gradient(bottom, #571818, #A31D1D, #E5D0AC);
 
 }
 .container {
@@ -19,7 +19,7 @@ body {
   max-width: 400px;
   min-width: 200px;
   width: 100%;
-  background: #F4E7E1;
+  background: #fffced;
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -84,7 +84,7 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: #D5451B;
+  background: #A31D1D;
 }
 .form button:hover {
   background: #FF9B45;
