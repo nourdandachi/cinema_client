@@ -12,7 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-    background: -webkit-linear-gradient(bottom, #521C0D, #c67024, #F4E7E1);
+    background: -webkit-linear-gradient(bottom, #891010, #cfb5b5, #ede9e9);
 
 }
 .container {
@@ -20,14 +20,14 @@ body {
   max-width: 450px;
   min-width: 200px;
   width: 100%;
-  background: #F4E7E1;
+  background: #ede9e9;
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 .container header {
   font-size: 1.5rem;
-  color: #521C0D;
+  color: #891010;
   font-weight: 500;
   text-align: center;
   margin-bottom: 20px;
@@ -40,7 +40,7 @@ body {
   margin-top: 20px;
 }
 .input-box label {
-  color: #521C0D;
+  color: #891010;
 }
 .form :where(.input-box input) {
   position: relative;
@@ -48,12 +48,12 @@ body {
   width: 100%;
   outline: none;
   font-size: 1rem;
-  color: #521C0D;
+  color: #891010;
   margin-top: 8px;
-  border: 1px solid #c67024;
+  border: 1px solid #891010;
   border-radius: 6px;
   padding: 0 15px;
-  background-color: #F4E7E1;
+  background-color: #ede9e9;
 }
 .input-box input:focus {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
@@ -62,17 +62,17 @@ body {
 .form button {
   height: 55px;
   width: 100%;
-  color: #F4E7E1;
+  color: #ede9e9;
   font-size: 1rem;
   font-weight: 400;
   margin-top: 30px;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: #D5451B;
+  background: #891010;
 }
 .form button:hover {
-  background: #FF9B45;
+  background: #710909;
 }
 
 @media screen and (max-width: 500px) {
