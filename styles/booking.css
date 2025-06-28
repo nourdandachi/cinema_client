@@ -211,6 +211,40 @@ input{
 }
 
 
+.timings{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.dates{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+.dates-item{
+    width: 3rem;
+    height: 3rem;
+    background: rgb(233,233,233);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.8rem 0;
+    border-radius: 2px;
+    cursor: pointer;
+
+}
+
+.day{
+    font-size: 0.8rem;
+}
 
 
 
