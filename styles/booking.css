@@ -87,9 +87,9 @@ header{
 }
 
 .tickets {
-    width: 550px;
+    width: 35rem;
     background: white;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
@@ -99,7 +99,7 @@ header{
     min-height: 100px; 
     align-items: center;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1rem;
     padding-top: 0.5rem;
     border-radius: 8px;
 
@@ -141,7 +141,7 @@ header{
     transform: translate(0, -50%);
     width: 0.8rem;
     height: 0.8rem;
-    background: white;
+    background: #ffd900;
     outline: 1px solid rgb(120,120,120);
     border-radius: 1px;
 }
@@ -154,6 +154,60 @@ header{
 .item:nth-child(1)::before{
     background: #e40c0c;
     outline: none;
+}
+
+.all-seats{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 0.5rem;
+    margin: 2rem 0;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.seat{
+    width: 0.8rem;
+    height: 0.8rem;
+    background: #e40c0c;
+    border-radius: 1px;
+    cursor: pointer
+}
+
+.all-seats input:checked+label{
+    background: #ffd900;
+    outline: none;
+}
+
+.seat.booked{
+    background: #119625;
+    outline: none;
+}
+
+input{
+    display: none;
+}
+
+.seats::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 17rem;
+    height: 7px;
+    background-color: #e40c0c8d;
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid rgb(180,180,180);
+}
+
+
+
+.screen{
+    margin-top: 0.2rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #e40c0c;
+    font-weight: 600;
 }
 
 
@@ -177,6 +231,8 @@ header{
     .header{
         padding: 1.3rem 5%;
     }
+
+   
 }
 
 @media (max-width: 400px) {
@@ -214,8 +270,6 @@ header{
     }
 
     .tickets {
-        width: 300px;
-        
         padding: 1rem;
         
     }
@@ -229,4 +283,10 @@ header{
     .item{
         font-size: 0.7rem;
     }
+
+    .seats::before{
+        width: 15rem;
+    }
+
+
 }

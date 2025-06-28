@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   const seats = document.querySelector(".all-seats");
-  for(let i=0; i<59; i++){
+  for(let i=0; i<49; i++){
         const randint = Math.floor(Math.random()*2);
         const booked = randint === 1 ? "booked" : "";
 
