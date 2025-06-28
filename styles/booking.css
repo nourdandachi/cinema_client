@@ -216,7 +216,7 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 .dates{
@@ -246,7 +246,26 @@ input{
     font-size: 0.8rem;
 }
 
+.times{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.6rem;   
+}
+.time{
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 0.2rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    background: rgb(233,233,233);;
+}
 
+.timings input:checked+label{
+    background: #e40c0c;
+    color: #ffffff;
+}
 
 
 
@@ -322,5 +341,11 @@ input{
         width: 15rem;
     }
 
+    .dates-item{
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 1rem 0;
+
+}
 
 }
