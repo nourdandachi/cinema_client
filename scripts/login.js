@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (response.data.status === 200) {
         localStorage.setItem('full_name', response.data.user.full_name);
-        window.location.href = 'index.html';
+        window.location.href = '../index.html';
       } else {
         alert(response.data.message || 'Login failed.');
       }
