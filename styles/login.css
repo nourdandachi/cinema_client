@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: -webkit-linear-gradient(bottom, #6e0c0c,#e40c0c, #cfb5b5, #ede9e9);
+  background: linear-gradient(to top, #150101, #6e0c0c, #e40c0c);
 
 }
 .container {
@@ -19,7 +19,7 @@ body {
   max-width: 400px;
   min-width: 200px;
   width: 100%;
-  background: #ede9e9;
+  background: #f4f3f3;
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
