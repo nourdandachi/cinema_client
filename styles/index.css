@@ -78,6 +78,20 @@ header{
     display: none;
 }
 
+.featured-content {
+    
+  height: 50vh;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #150101), url('../assets/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10%;
+}
+
+.featured-desc{
+    width: 50%;
+    color: #ffffff;
+}
 
 
 @media (max-width: 992px) {
@@ -85,9 +99,13 @@ header{
     .header{
         padding: 1.3rem 5%;
     }
+    .featured-desc{
+        width: 70%;
+        color: #ffffff;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 
     .icons{
         display: inline-flex;
@@ -120,4 +138,9 @@ header{
         margin: 1.5rem 0;
         text-align: center;
     }
+
+    .featured-desc {
+        width: 90%;
+    }
+
 }
