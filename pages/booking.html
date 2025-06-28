@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="../styles/booking.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <i class='bx  bxs-movie'></i> Smart-Cinema
+        </a>
+
+        <label for="" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <ul class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Movies</a>
+        </ul>
+        <a href="" class="profile"><i class='bx  bx-user-circle'  style="font-size: 1.5rem;"></i> </a>
+
+    </header>
+
+    <section class="main">
+        <div class="tickets">
+            <div class="ticket-selector">
+                <div class="title">
+                    movie title
+                </div>
+                <div class="seats">
+                    <div class="status">
+                        <div class="item">Available</div>
+                        <div class="item">Booked</div>
+                        <div class="item">Selected</div>
+                    </div>
+                    <div class="all-seats">
+                        <input type="checkbox" name="tickets" id="s1">
+                        <label for="s1" class="seat booked"></label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="../scripts/booking.js"></script>
+
+</body>
+</html>
