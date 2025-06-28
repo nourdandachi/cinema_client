@@ -67,20 +67,6 @@ header{
     margin-left: 2rem; 
 }
 
-/* .navbar a::after{
-    content: '';
-    width: 0;
-    height: 2px;
-    background: #150101;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    transition: 0.4s all linear;
-}
-
-.navbar a:hover::after{
-    width: 100%;
-} */
 
 
 .icons{
@@ -124,7 +110,7 @@ header{
     }
 
       .navbar.active {
-        display: block; /* only toggle on small screens */
+        display: block;
   }
 
 
