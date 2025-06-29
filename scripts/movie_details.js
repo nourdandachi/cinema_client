@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
   const result = document.querySelector(".result");
-  const movieId = localStorage.getItem("selected-movie");
+  const movieId = localStorage.getItem("temp-movie");
 
   const halls= document.querySelector(".audi");
 
