@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (bookingRes.data.status !== 200 || !bookingRes.data.booking_id) {
-      alert("Booking failed: " + (bookingRes.data?.message || "Unknown error"));
+      alert("Booking failed: " + (bookingRes.data.message || "Unknown error"));
       return;
     }
 
