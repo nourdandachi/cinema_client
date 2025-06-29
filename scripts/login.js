@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (response.data.status === 200) {
         localStorage.setItem('full_name', response.data.user.full_name);
+        localStorage.setItem('selected-movie', 3);
         window.location.href = '../index.html';
       } else {
         alert(response.data.message || 'Login failed.');

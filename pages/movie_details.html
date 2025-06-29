@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="../styles/movie_details.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
@@ -19,26 +19,27 @@
         </label>
 
         <ul class="navbar">
-            <a href="#">Home</a>
+            <a href="../index.html">Home</a>
             <a href="#">Movies</a>
         </ul>
         <a href="" class="profile"><i class='bx  bx-user-circle'  style="font-size: 1.5rem;"></i> </a>
 
     </header>
-    <section class="container">
-        <div class="content-container">
-            <div class="featured-content">
-                <p class="featured-desc"><i class='bx  bxs-star'  ></i> 8.6 | 128 minutes</p>
-                <p class="featured-desc">Lilo & Stitch is about a girl and a misfit alien who discover the true meaning of family.</p>
-                <a href="pages/movie_details.html" class="featured-btn">Watch</a>
+
+    <div class="container">
+        <div class="result"></div>
+        <div class="places">
+            <h3>Auditoriums:</h3>
+            <div class="halls">
+                
             </div>
-            
         </div>
-
-    </section>
-
-
-    <script src="scripts/index.js"></script>
+        <a class="book-btn" href="booking.html">
+            Book
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/movie_details.js"></script>
 
 </body>
 </html>
