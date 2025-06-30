@@ -50,7 +50,7 @@ header{
 
 
 
-.profile{
+.user-profile{
     font-size: 1.1rem;
     font-weight: 700;
     color: #ffffff;
@@ -94,6 +94,153 @@ header{
 }
 
 
+.container{
+
+    display: flex;
+    margin: 50px 10px;
+    margin-top: 100px;
+}
+
+.profile{
+    flex: 1;
+    margin-right: 10px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, .16) 0px 1px 4px;
+    border-radius: 5px;
+    height: max-content;
+}
+
+.menu{
+    margin: 0 20px;
+}
+
+.menu-link{
+    display: block;
+    text-decoration: none;
+    color: #e40c0c;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.menu-icon1{
+    margin-right: 10px;
+}
+
+
+.menu-link:first-child{
+    color: #ffffff;
+    background-color: #e40c0c;
+}
+
+.menu-link:hover{
+    background-color: #ffffff;
+    color: #e40c0c;
+}
+
+.account{
+    flex: 2;
+    margin-left: 10px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, .16) 0px 1px 4px;
+    border-radius: 5px;
+    height: max-content;
+
+}
+
+.account-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #6a6868;
+}
+
+.account-title{
+    font-size: 20px;
+    color: #e40c0c;
+    font-weight: 600;
+    margin-left: 10px;
+
+}
+
+.btn-container{
+    margin-right: 5px;
+}
+
+.btn-cancel{
+    width: 8em;
+    height: 3em;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 0.5em;
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 5px;
+    background-color: #e40c0c;
+    box-shadow: rgba(0, 0, 0, .1);
+}
+
+
+
+.btn-save{
+    width: 8em;
+    height: 3em;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 0.5em;
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 5px;
+    background-color: #e40c0c;
+    box-shadow: rgba(0, 0, 0, .1);
+}
+
+
+.account-edit{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;;
+
+}
+
+.input-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+
+}
+
+.input-container label{
+    color: #e40c0c;
+    font-size: 14px;
+}
+
+.input-container input{
+    height: 25px;
+    border: 1px solid #e40c0c;
+    padding: 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+
+
+
+.submit-btn{
+    margin-top: 3px;
+    width: 8em;
+    height: 3em;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 0.5em;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, .1);
+}
+
 @media (max-width: 992px) {
 
     .header{
@@ -136,6 +283,42 @@ header{
         font-size: 1.1rem;
         margin: 1.5rem 0;
         text-align: center;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .container{
+        flex-direction: column;
+    }
+
+    .profile{
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .acoount{
+        margin-bottom: 0;
+    }
+    
+    .account-header{
+        flex-direction: column;
+    }
+
+    .account-edit{
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .input-container{
+        margin: 10px;
+
+    }
+
+    .input-container input{
+        margin-right: 10px;
+
     }
 
 

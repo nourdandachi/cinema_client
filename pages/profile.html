@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/profile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
@@ -22,12 +22,69 @@
             <a href="../index.html">Home</a>
             <a href="movies.html">Movies</a>
         </ul>
-        <a href="pages/profile.html" class="profile"><div class="user-name"></div><i class='bx  bx-user-circle'  style="font-size: 1.5rem;"></i> </a>
+        <a href="profile.html" class="user-profile"><div class="user-name"></div><i class='bx  bx-user-circle'  style="font-size: 1.5rem;"></i></a>
 
     </header>
 
+    <div class="container">
+        <div class="profile">
+            <div class="menu">
+                <a href="#" class="menu-link"><i class='bx  bxs-user-circle'  ></i> Account</a>
+                <a href="login.html" class="menu-link"><i class='bx  bxs-arrow-left-stroke-square'  ></i> Logout</a>
+            </div>
+        </div>
 
-    <script src="../scripts/index.js"></script>
+        <form action="" class="account">
+            <div class="account-header">
+                <h1 class="account-title">Account Settings</h1>
+                <div class="btn-container">
+                    <button class="btn-cancel">Cancel</button>
+                    <button class="btn-save">Save</button>
+                </div>
+            </div>
+
+            <div class="account-edit">
+                <div class="input-container">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" id="first-name"/>
+                </div>
+                <div class="input-container">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Last Name" id="last-name"/>
+                </div>
+            </div>
+            <div class="account-edit">
+                <div class="input-container">
+                    <label>Email</label>
+                    <input type="email" placeholder="Email" id="email"/>
+                </div>
+                <div class="input-container">
+                    <label>Phone Number</label>
+                    <input type="number" placeholder="Phone Number" id="number"/>
+                </div>
+            </div>
+            <div class="account-edit">
+                <div class="input-container">
+                    <label>Birthdate</label>
+                    <input type="date" id="birthdate"/>
+                </div>
+                <div class="input-container">
+                    <label for="img">Profile Photo</label>
+                    <input type="file" id="img" name="img" accept="image/*"/>
+                    <input class="submit-btn" type="submit">
+                </div>
+            </div>
+            <div class="account-edit">
+                <div class="input-container">
+                    <label>Preferred Genres</label>
+                    <input type="text" placeholder="Fiction, Romance, Action" id="genres"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/profile.js"></script>
 
 </body>
 </html>
