@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   const movie_id = localStorage.getItem("selected-movie");
   const auditorium_id = localStorage.getItem("selected-auditorium");
+  const user_id = localStorage.getItem("user_id");
+  const user_name = localStorage.getItem("full_name");
+
+  const nav_name= document.querySelector(".user-name");
+  nav_name.innerHTML = `${user_name}`;
 
   menuIcon.addEventListener("click", () => {
     navbar.classList.add("active");
@@ -233,10 +238,9 @@ document.addEventListener("DOMContentLoaded", function () {
       totalPrice += parseFloat(seat.dataset.price || 10);
     });
 
-    const userId = 12;
 
     const bookingRes = await axios.post("../../cinema_server/controllers/add_booking.php", {
-      user_id: userId,
+      user_id: user_id,
       showtime_id: showtimeId,
       total_price: totalPrice,
       booking_status: "confirmed"

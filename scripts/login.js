@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.form');
+  localStorage.setItem('user_id', -1);
+  localStorage.setItem('full_name', "-");
+  localStorage.setItem('selected-movie', "-");
+  localStorage.setItem('temp-movie', "-");
+  localStorage.setItem('selected-auditorium', "-");
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -29,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
       );
 
       if (response.data.status === 200) {
+        localStorage.setItem('user_id', response.data.user.id);
         localStorage.setItem('full_name', response.data.user.full_name);
-        localStorage.setItem('selected-movie', 3);
         window.location.href = '../index.html';
       } else {
         alert(response.data.message || 'Login failed.');

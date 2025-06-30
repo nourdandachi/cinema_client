@@ -355,6 +355,9 @@ input{
   }
 
 
+  .user-name{
+        display: none;
+    }
     .navbar a{
         display: block;
         font-size: 1.1rem;

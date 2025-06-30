@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   const container = document.querySelector(".movie-grid");
 
+  localStorage.setItem('selected-movie', "-");
+  localStorage.setItem('temp-movie', "-");
+  localStorage.setItem('selected-auditorium', "-");
+
+  const user_name = localStorage.getItem("full_name");
+  const nav_name= document.querySelector(".user-name");
+  nav_name.innerHTML = `${user_name}`;
+
   menuIcon.addEventListener("click", () => {
     navbar.classList.add("active");
     menuIcon.style.display = "none";

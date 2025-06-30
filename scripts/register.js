@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('register-form');
 
+  localStorage.setItem('user_id', -1);
+  localStorage.setItem('full_name', "-");
+  localStorage.setItem('selected-movie', "-");
+  localStorage.setItem('temp-movie', "-");
+  localStorage.setItem('selected-auditorium', "-");
+
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
@@ -34,9 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
       );
 
       if (response.data.status === 200) {
-        localStorage.setItem('full_name', fullName);
         alert("Registration successful!");
-        window.location.href = "../index.html";
+        window.location.href = "../pages/login.html";
       } else {
         alert(response.data.message || "Registration failed.");
       }

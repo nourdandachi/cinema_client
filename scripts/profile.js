@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   localStorage.setItem('selected-movie', "-");
   localStorage.setItem('temp-movie', "-");
-  localStorage.setItem('selected-auditorium', "-");
   
 
   menuIcon.addEventListener("click", () => {

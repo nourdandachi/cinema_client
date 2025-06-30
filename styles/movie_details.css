@@ -233,6 +233,10 @@ input[type="radio"] {
         display: none;
     }
 
+    .user-name{
+        display: none;
+    }
+
     .navbar{
         display: none; 
         position: absolute;
