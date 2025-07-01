@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
-    <link rel="stylesheet" href="../styles/profile.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
@@ -19,65 +19,72 @@
         </label>
 
         <ul class="navbar">
-            <a href="../index.html">Home</a>
-            <a href="movies.html">Movies</a>
+            <a href="dashboard.html">Dashboard</a>
         </ul>
         <a href="profile.html" class="user-profile"><div class="user-name"></div><i class='bx  bx-user-circle'  style="font-size: 1.5rem;"></i></a>
 
     </header>
 
     <div class="container">
-        <div class="profile">
+        <div class="dashboard">
             <div class="menu">
-                <a href="#" class="menu-link"><i class='bx  bxs-user-circle'  ></i> Account</a>
+                <a href="#" class="menu-link"><i class='bx  bxs-movie'></i> Add Movie</a>
                 <a href="login.html" class="menu-link"><i class='bx  bxs-arrow-left-stroke-square'  ></i> Logout</a>
             </div>
         </div>
 
-        <form action="" class="account">
-            <div class="account-header">
-                <h1 class="account-title">Account Settings</h1>
+        <form action="" class="add-movie">
+            <div class="add-header">
+                <h1 class="add-title">Add a Movie</h1>
                 <div class="btn-container">
                     <button class="btn-cancel">Cancel</button>
                     <button class="btn-save">Save</button>
                 </div>
             </div>
 
-            <div class="account-edit">
+            <div class="add-input">
                 <div class="input-container">
-                    <label>First Name</label>
-                    <input type="text" placeholder="First Name" id="first-name"/>
+                    <label>Movie Name</label>
+                    <input type="text" placeholder="Movie Name" id="movie-name"/>
                 </div>
                 <div class="input-container">
-                    <label>Last Name</label>
-                    <input type="text" placeholder="Last Name" id="last-name"/>
-                </div>
-            </div>
-            <div class="account-edit">
-                <div class="input-container">
-                    <label>Email</label>
-                    <input type="email" placeholder="Email" id="email"/>
-                </div>
-                <div class="input-container">
-                    <label>Phone Number</label>
-                    <input type="number" placeholder="Phone Number" id="number"/>
+                    <label>Movie Description</label>
+                    <input type="text" placeholder="Movie Description" id="movie-desc"/>
                 </div>
             </div>
-            <div class="account-edit">
+            <div class="add-input">
                 <div class="input-container">
-                    <label>Birthdate</label>
-                    <input type="date" id="birthdate"/>
+                    <label>Genres</label>
+                    <input type="text" placeholder="Fiction, Romance, Action..." id="genres"/>
                 </div>
                 <div class="input-container">
-                    <label for="img">Profile Photo</label>
-                    <input type="file" id="img" name="img" accept="image/*"/>
+                    <label>Actors</label>
+                    <input type="text" placeholder="Actors" id="actors"/>
+                </div>
+            </div>
+            <div class="add-input">
+                <div class="input-container">
+                    <label>Trailer URL</label>
+                    <input type="text" id="trailer_url"/>
+                </div>
+                <div class="input-container">
+                    <label for="poster">Poster</label>
+                    <input type="file" id="poster" name="poster" accept="image/*"/>
                     <input class="submit-btn" type="submit">
                 </div>
             </div>
-            <div class="account-edit">
+            <div class="add-input">
                 <div class="input-container">
-                    <label>Preferred Genres</label>
-                    <input type="text" placeholder="Fiction, Romance, Action" id="genres"/>
+                    <label>Rating</label>
+                    <input type="number" placeholder="Rating" id="rating"/>
+                </div>
+                <div class="input-container">
+                    <label>Duration</label>
+                    <input type="number" placeholder="Duration in minutes" id="duration"/>
+                </div>
+                <div class="input-container">
+                    <label>Release Date</label>
+                    <input type="date" id="release-date"/>
                 </div>
             </div>
         </form>
