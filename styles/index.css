@@ -162,6 +162,15 @@ h2{
 
 }
 
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    margin: 0.6em 0 0.9em 0;
+    color: #6e0c0c;
+}
+
 .card-content h3{
     font-size: 28px;
     margin-bottom: 8px;

@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const movieId = localStorage.getItem("temp-movie");
 
   const halls= document.querySelector(".audi");
+  const bookBtn = document.querySelector(".book-btn");
 
     async function fetchMovieDetails() {
     try {
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${movie.actors}</p>
                 
             `;
+            bookBtn.id = movie.title;
 
         } else {
             console.error("Error:", response.data.message);
@@ -105,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchAuditoriums()
     fetchMovieDetails();
 
-    const bookBtn = document.querySelector(".book-btn");
+    
 
     bookBtn.addEventListener("click", () => {
     const selectedHall = document.querySelector('input[name="hall"]:checked');
@@ -114,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const auditoriumId = selectedHall.id.replace("h", "");
         localStorage.setItem("selected-movie", movieId);
         localStorage.setItem("selected-auditorium", auditoriumId);
+        localStorage.setItem("selected-movie-name", bookBtn.id);
     } else {
         alert("Please select an auditorium before booking.");
     }

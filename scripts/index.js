@@ -46,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
                       <div class="card-content">
                           <h3>${movie.title}</h3>
                           <p>${movie.description}</p>
-                          <a href="/smart_cinema_booking/pages/movies.html" class="btn">Book</a>
+                          <a href="/smart_cinema_booking/pages/movies.html" class="btn">Book</a><div class="rating">
+                            <i class='bx  bxs-star'  ></i>
+                            <h4>${movie.rating}</h4>
+                        </div>
                       </div>
                   </div>
                   `;

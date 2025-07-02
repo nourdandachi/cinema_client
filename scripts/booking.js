@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const auditorium_id = localStorage.getItem("selected-auditorium");
   const user_id = localStorage.getItem("user_id");
   const user_name = localStorage.getItem("full_name");
+  const title = document.querySelector(".title");
 
   const nav_name= document.querySelector(".user-name");
   nav_name.innerHTML = `${user_name}`;
@@ -21,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     menuIcon.style.display = "inline";
     closeIcon.style.display = "none";
   });
+
+  title.textContent= localStorage.getItem("selected-movie-name");
 
   document.querySelector(".price button").addEventListener("click", handleBooking);
 
