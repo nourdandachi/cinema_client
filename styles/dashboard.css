@@ -122,7 +122,7 @@ header{
     color: #e40c0c;
 }
 
-.add-movie{
+.add{
     flex: 2;
     margin-left: 10px;
     background-color: #ffffff;
@@ -282,7 +282,7 @@ header{
         margin-right: 0;
     }
 
-    .add-movie{
+    .add{
         margin-bottom: 0;
     }
     
