@@ -1,120 +1,121 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   const menuIcon = document.getElementById("menu-icon");
-//   const closeIcon = document.getElementById("close-icon");
-//   const navbar = document.querySelector(".navbar");
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const navbar = document.querySelector(".navbar");
 
-//   menuIcon.addEventListener("click", () => {
-//     navbar.classList.add("active");
-//     menuIcon.style.display = "none";
-//     closeIcon.style.display = "inline";
-//   });
+  menuIcon.addEventListener("click", () => {
+    navbar.classList.add("active");
+    menuIcon.style.display = "none";
+    closeIcon.style.display = "inline";
+  });
 
-//   closeIcon.addEventListener("click", () => {
-//     navbar.classList.remove("active");
-//     menuIcon.style.display = "inline";
-//     closeIcon.style.display = "none";
-//   });
-
-
-//   const user_id = localStorage.getItem("user_id");
-//   const user_name = localStorage.getItem("full_name");
-//   localStorage.setItem('selected-movie', "-");
-//   localStorage.setItem('temp-movie', "-");
+  closeIcon.addEventListener("click", () => {
+    navbar.classList.remove("active");
+    menuIcon.style.display = "inline";
+    closeIcon.style.display = "none";
+  });
 
 
-//   const nav_name= document.querySelector(".user-name");
-//   nav_name.innerHTML = `${user_name}`;
+  const user_id = localStorage.getItem("user_id");
+  const user_name = localStorage.getItem("full_name");
 
-//   const first_name= document.getElementById("first-name");
-//   const last_name= document.getElementById("last-name");
-//   const email= document.getElementById("email");
-//   const number= document.getElementById("number");
-//   const birthdate= document.getElementById("birthdate");
-//   const genres= document.getElementById("genres");
+
+  const nav_name= document.querySelector(".user-name");
+  nav_name.innerHTML = `${user_name}`;
+
+  const title= document.getElementById("title");
+  const desc= document.getElementById("desc");
+  const genre= document.getElementById("genre");
+  const actors= document.getElementById("actors");
+  const trailer_url= document.getElementById("trailer-url");
+  const poster= document.getElementById("poster");
+  const rating= document.getElementById("rating");
+  const duration= document.getElementById("duration");
+  const release_date= document.getElementById("release-date");
+
+  const base64 = {"string": ''};
+
+  poster.addEventListener('change', () => {
+    const image= poster.files[0];
+
+    if(image){
+        const reader = new FileReader;
+        reader.onload = (e) =>{
+            base64.string= e.target.result;
+            console.log("success");
+        }
+            reader.onerror = (error) => {
+            alert('Error reading image');
+            console.error('Error reading image:', error);
+        };
+
+        reader.readAsDataURL(image);
+
+    }
+
+  })
   
 
-  
-  
-//   async function fetchUserDetails() {
-    
-//     try {
-//         const response = await axios.get(`../../cinema_server/controllers/get_users.php`, {
-//         params: { id: user_id }
-//         });
+  document.querySelector(".btn-save").addEventListener("click", (event) => {
+    event.preventDefault();
 
-//         if (response.data.status === 200) {
-
-//             const user = response.data.users;
-//             console.log("user found:", user);
-//             first_name.value = response.data.users.full_name.substring(0, user_name.indexOf(' '));
-//             last_name.value = response.data.users.full_name.substring(user_name.indexOf(' ') + 1);
-
-//             email.value = response.data.users.email;
-//             number.value = response.data.users.phone_number;
-
-            
-//             birthdate.value = response.data.users.birthdate;
-//             genres.value = response.data.users.preferred_genres;
-
-//             localStorage.setItem('full_name', response.data.users.full_name);
-//             nav_name.innerHTML = `${response.data.users.full_name}`;
-            
-
-            
-//         } else {
-//             console.error("Error:", response.data.message);
-//         }
-//     } catch (error) {
-//             console.error("Request failed:", error);
-//     }
-//   }
-
-//   document.querySelector(".btn-cancel").addEventListener("click", () => {
-//     fetchUserDetails();
-  
-//   });
-
-//   document.querySelector(".btn-save").addEventListener("click", () => {
-//     const updatedData = {
-//       id: user_id,
-//       full_name: `${first_name.value} ${last_name.value}`,
-//       email: email.value,
-//       phone_number: number.value,
-//       birthdate: birthdate.value,
-//       preferred_genres: genres.value
-//     };
-
-//     updateUser(updatedData);
-//   });
+    if (
+        !title.value.trim() ||
+        !desc.value.trim() ||
+        !genre.value.trim() ||
+        !rating.value.trim() ||
+        !actors.value.trim() ||
+        !trailer_url.value.trim() ||
+        !base64.string ||
+        !release_date.value.trim() ||
+        !duration.value.trim()
+        ) {
+        alert("Please fill in all fields.");
+        return;
+        }
 
 
-//   async function updateUser(data) {
+    const movieData = {
+      title: title.value,
+      description: desc.value,
+      genre: genre.value,
+      rating: rating.value,
+      actors: actors.value,
+      trailer_url: trailer_url.value,
+      poster_url: base64.string,
+      release_date: release_date.value,
+      duration_minutes: duration.value
+    };
 
-//     try {
-//       const response = await axios.post(
-//         '../../cinema_server/controllers/update_user.php',
-//         JSON.stringify(data),
-//         {
-//           headers: {
-//             'Content-Type': 'application/json',
-//           },
-//         }
-//       );
-
-//       if (response.data.status === 200) {
-
-//         alert("Update successful!");
-//         fetchMovieDetails();
-//       } else {
-//         alert(response.data.message || "Update failed.");
-//       }
-//     } catch (error) {
-//       console.error("Update error:", error);
-//       alert("Something went wrong. Try again later.");
-//     }
-//   }
-  
-//     fetchUserDetails();
+    addMovie(movieData);
+  });
 
 
-// });
+
+  async function addMovie(data) {
+
+    try {
+      const response = await axios.post(
+        '../../cinema_server/controllers/add_movie.php',
+        JSON.stringify(data),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      console.log(response.data); 
+      if (response.data.status === 200) {
+        alert("Movie added successfully!");
+      } else {
+        alert(response.data.message || "Operation failed.");
+      }
+    } catch (error) {
+      console.error("Operation error:", error);
+      alert("Something went wrong. Try again later.");
+    }
+  }
+
+
+});

@@ -36,7 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (response.data.status === 200) {
         localStorage.setItem('user_id', response.data.user.id);
         localStorage.setItem('full_name', response.data.user.full_name);
-        window.location.href = '../index.html';
+        if(data.email === "admin@gmail.com"){
+          window.location.href = '../pages/dashboard.html';
+        }else{
+          window.location.href = '../index.html';
+        }
+        
       } else {
         alert(response.data.message || 'Login failed.');
       }

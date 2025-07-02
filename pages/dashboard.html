@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Admin Page</title>
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
@@ -44,54 +44,54 @@
 
             <div class="add-input">
                 <div class="input-container">
-                    <label>Movie Name</label>
-                    <input type="text" placeholder="Movie Name" id="movie-name"/>
+                    <label>Movie Title</label>
+                    <input type="text" placeholder="Movie Title" id="title" required/>
                 </div>
                 <div class="input-container">
                     <label>Movie Description</label>
-                    <input type="text" placeholder="Movie Description" id="movie-desc"/>
+                    <input type="text" placeholder="Movie Description" id="desc" required/>
                 </div>
             </div>
             <div class="add-input">
                 <div class="input-container">
-                    <label>Genres</label>
-                    <input type="text" placeholder="Fiction, Romance, Action..." id="genres"/>
+                    <label>Genre</label>
+                    <input type="text" placeholder="Fiction, Romance, Action..." id="genre" required/>
                 </div>
                 <div class="input-container">
                     <label>Actors</label>
-                    <input type="text" placeholder="Actors" id="actors"/>
+                    <input type="text" placeholder="Actors" id="actors" required/>
                 </div>
             </div>
             <div class="add-input">
                 <div class="input-container">
                     <label>Trailer URL</label>
-                    <input type="text" id="trailer_url"/>
+                    <input type="text" id="trailer-url" required/>
                 </div>
                 <div class="input-container">
                     <label for="poster">Poster</label>
-                    <input type="file" id="poster" name="poster" accept="image/*"/>
+                    <input type="file" id="poster" accept="image/*" required/>
                     <input class="submit-btn" type="submit">
                 </div>
             </div>
             <div class="add-input">
                 <div class="input-container">
                     <label>Rating</label>
-                    <input type="number" placeholder="Rating" id="rating"/>
+                    <input type="number" placeholder="Rating" id="rating" required/>
                 </div>
                 <div class="input-container">
                     <label>Duration</label>
-                    <input type="number" placeholder="Duration in minutes" id="duration"/>
+                    <input type="number" placeholder="Duration in minutes" id="duration" required/>
                 </div>
                 <div class="input-container">
                     <label>Release Date</label>
-                    <input type="date" id="release-date"/>
+                    <input type="date" id="release-date" required/>
                 </div>
             </div>
         </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../scripts/profile.js"></script>
+    <script src="../scripts/dashboard.js"></script>
 
 </body>
 </html>
