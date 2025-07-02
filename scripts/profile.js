@@ -74,10 +74,11 @@ document.addEventListener("DOMContentLoaded", function () {
   
   });
 
-  document.querySelector(".btn-save").addEventListener("click", () => {
+  document.querySelector(".btn-save").addEventListener("click", (e) => {
+    e.preventDefault();
     const updatedData = {
       id: user_id,
-      full_name: `${first_name.value} ${last_name.value}`,
+      full_name: `${first_name.value.trim()} ${last_name.value.trim()}`,
       email: email.value,
       phone_number: number.value,
       birthdate: birthdate.value,
@@ -100,11 +101,13 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         }
       );
-
       if (response.data.status === 200) {
 
+
         alert("Update successful!");
-        fetchMovieDetails();
+        location.reload();
+
+
       } else {
         alert(response.data.message || "Update failed.");
       }

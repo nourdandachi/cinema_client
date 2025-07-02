@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeIcon = document.getElementById("close-icon");
   const navbar = document.querySelector(".navbar");
   
+  const user_name = localStorage.getItem("full_name");
+  const nav_name= document.querySelector(".user-name");
+  nav_name.innerHTML = `${user_name}`;
 
   menuIcon.addEventListener("click", () => {
     navbar.classList.add("active");
