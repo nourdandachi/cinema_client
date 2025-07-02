@@ -110,7 +110,7 @@ main{
     margin-bottom: 12px;
 }
 
-button{
+.check-btn{
     padding: 1em 2.1em 1.1em;
     border-radius: 8px;
     margin: 8px;
@@ -124,7 +124,7 @@ button{
 
 }
 
-button:hover{
+.check-btn:hover{
     background-color: transparent;
     color: #ffffff;
     border: 3px solid #000000;

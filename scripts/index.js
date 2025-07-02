@@ -25,5 +25,53 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   
+  const card_container = document.querySelector(".card-container");
+
+  
+
+  async function fetchHighestMovies() {
+    try {
+        
+      const response = await axios.get(`../../cinema_server/controllers/get_highest_ratings.php`);
+
+        if (response.data.status === 200) {
+
+            if (response.data.status === 200) {
+
+            const movies = response.data.movies;
+              movies.forEach(movie => {
+                card_container.innerHTML += `
+                  <div class="card">
+                      <img src=${movie.poster_url}>
+                      <div class="card-content">
+                          <h3>${movie.title}</h3>
+                          <p>${movie.description}</p>
+                          <a href="/smart_cinema_booking/pages/movies.html" class="btn">Book</a>
+                      </div>
+                  </div>
+                  `;
+              
+              });
+
+              
+
+          }
+        } else {
+            console.error("Error:", response.data.message);
+        }
+
+    } catch (error) {
+      console.error("Request failed:", error);
+    }
+  }
+
+ 
+
+    
+
+  
+  
+
+  fetchHighestMovies();
   
 });
