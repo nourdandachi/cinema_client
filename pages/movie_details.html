@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details Page</title>
+    <link rel="stylesheet" href="../styles/movie_details.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <i class='bx  bxs-movie'></i> Smart-Cinema
+        </a>
+
+        <label for="" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <ul class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="movies.html">Movies</a>
+        </ul>
+         <a href="profile.html" class="profile"><div class="user-name"></div><i class='bx  bx-user-circle'  style="font-size: 1.5rem;"></i> </a>
+    </header>
+
+    <div class="container">
+        <div class="result"></div>
+        <div class="places">
+            <h3>Auditoriums:</h3>
+            <div class="halls">
+                
+            </div>
+        </div>
+        <a class="book-btn" href="booking.html">
+            Book
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/movie_details.js"></script>
+
+</body>
+</html>

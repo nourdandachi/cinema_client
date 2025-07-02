@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to top, #150101, #6e0c0c, #e40c0c);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 3%;
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+.logo{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+
+
+.profile{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2rem; 
+}
+
+
+
+.icons{
+    position: absolute;
+    right: 10%;
+    font-size: 2.8rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px; 
+    background: linear-gradient(to top, #150101, #6e0c0c, #e40c0c);
+}
+
+.tickets {
+    width: 35rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-selector {
+    background: rgb(243,243,243);
+    min-height: 100px; 
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 8px;
+
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.seats{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.status{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.item{
+    font-size: 1rem;
+    position: relative;
+}
+
+.item::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -14px;
+    transform: translate(0, -50%);
+    width: 0.8rem;
+    height: 0.8rem;
+    background: #ffd900;
+    outline: 1px solid rgb(120,120,120);
+    border-radius: 1px;
+}
+
+.item:nth-child(2)::before{
+    background: #119625;
+    outline: none;
+}
+
+.item:nth-child(1)::before{
+    background: #e40c0c;
+    outline: none;
+}
+
+.all-seats{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 0.5rem;
+    margin: 2rem 0;
+    margin-top: 1rem;
+    position: relative;
+    transform-origin: bottom;
+}
+
+.seat{
+    width: 0.8rem;
+    height: 0.8rem;
+    background: #e40c0c;
+    border-radius: 1px;
+    cursor: pointer
+}
+
+.all-seats input:checked+label{
+    background: #ffd900;
+    outline: none;
+}
+
+.seat.booked{
+    background: #119625;
+    outline: none;
+}
+
+input{
+    display: none;
+}
+
+.seats::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 17rem;
+    height: 7px;
+    background-color: #e40c0c8d;
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid rgb(180,180,180);
+}
+
+
+
+.screen{
+    margin-top: 0.2rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #e40c0c;
+    font-weight: 600;
+}
+
+
+.timings{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.dates{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+.dates-item{
+    width: 3rem;
+    height: 3rem;
+    background: rgb(233,233,233);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.8rem 0;
+    border-radius: 2px;
+    cursor: pointer;
+
+}
+
+.day{
+    font-size: 0.8rem;
+}
+
+.times{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.6rem;   
+}
+.time{
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 0.2rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    background: rgb(233,233,233);;
+}
+
+.timings input:checked+label{
+    background: #e40c0c;
+    color: #ffffff;
+}
+
+
+.price{
+    padding: 0.8rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1 rem;
+    font-weight: 500;
+}
+
+.total div{
+    display: flex;
+    font-weight: 400;
+
+}
+
+.total span{
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.price button{
+    background-color: #e40c0c;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.price button:hover{
+    background-color: #6e0c0c;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+
+    .header{
+        padding: 1.3rem 5%;
+    }
+
+   
+}
+
+@media (max-width: 400px) {
+
+    .icons{
+        display: inline-flex;
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    .navbar{
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 9rem;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    }
+
+      .navbar.active {
+        display: block;
+  }
+
+
+  .user-name{
+        display: none;
+    }
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+
+    .tickets {
+        padding: 1rem;
+        
+    }
+    .ticket-selector {
+        
+        padding: 1rem;
+        
+
+    }
+
+    .item{
+        font-size: 0.7rem;
+    }
+
+    .seats::before{
+        width: 15rem;
+    }
+
+    .dates-item{
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 1rem 0;
+
+}
+
+}

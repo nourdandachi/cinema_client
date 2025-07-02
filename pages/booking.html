@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="../styles/booking.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <i class='bx  bxs-movie'></i> Smart-Cinema
+        </a>
+
+        <label for="" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <ul class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="movies.html">Movies</a>
+        </ul>
+         <a href="profile.html" class="profile"><div class="user-name"></div><i class='bx  bx-user-circle'  style="font-size: 1.5rem;"></i> </a>
+
+    </header>
+
+    <section class="main">
+        <div class="tickets">
+            <div class="ticket-selector">
+                <div class="title"></div>
+                <div class="seats">
+                    <div class="status">
+                        <div class="item">Available</div>
+                        <div class="item">Booked</div>
+                        <div class="item">Selected</div>
+                    </div>
+                    <div class="all-seats"></div>
+                </div>
+                <div class="screen">Screen</div>
+                <div class="timings">
+                    <div class="dates"></div>
+                    <div class="times"></div>
+                </div>
+            </div>
+            <div class="price">
+                <div class="total">
+                    <span><span class="count">0</span> Tickets</span>
+                    <div>$ <div class="amount">0</div></div>
+                </div>
+                <button type="button">Book</button>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="../scripts/booking.js"></script>
+
+</body>
+</html>

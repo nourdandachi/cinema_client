@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <i class='bx  bxs-movie'></i> Smart-Cinema
+        </a>
+
+        <label for="" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <ul class="navbar">
+            <a href="index.html">Home</a>
+            <a href="pages/movies.html">Movies</a>
+        </ul>
+        <a href="pages/profile.html" class="profile"><div class="user-name"></div><i class='bx  bx-user-circle'  style="font-size: 1.5rem;"></i> </a>
+
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero-text">
+                <h1>Your Perfect Cinema Experience</h1>
+                <p>Book your favorite movie. Enjoy!</p>
+                <a href="pages/movies.html" class="check-btn">Check Movies</a>
+            </div>
+        </div>
+    </main>
+
+    <h2>Top Rated Movies</h2>
+
+    <div class="card-container"></div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/index.js"></script>
+
+</body>
+</html>

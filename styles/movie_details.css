@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to top, #150101, #6e0c0c, #e40c0c);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 3%;
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+.logo{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+
+
+.profile{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2rem; 
+}
+
+
+
+.icons{
+    position: absolute;
+    right: 10%;
+    font-size: 2.8rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+}
+
+
+.container{
+    font-size: 16px;
+    width: 90vw;
+    max-width: 37.5em;
+    padding: 3em 1.8em;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.6rem;
+    box-shadow: 1.2rem 2em 3em rgba(0, 0, 0, 0.2);
+    margin-top: 2em;
+}
+
+.info{
+    color:#6e0c0c;
+    position: relative;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    align-items: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.poster{
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    margin: 0.6em 0 0.9em 0;
+}
+
+.rating img{
+    width: 1.2em;
+}
+
+.rating h4{
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.details{
+    display: flex;
+    font-size: 0.95em;
+    gap: 1em;
+    justify-content: center;
+    color:#848484;
+    margin: 0.6em 0;
+    font-weight: 600;
+}
+
+.genre{
+    display: flex;
+    justify-content: space-around;
+}
+
+.genre div{
+    font-weight: 300;
+
+}
+
+h3{
+    font-weight: 600;
+    margin-top: 1em;
+    color: #6e0c0c;
+}
+
+p{
+    font-size: 0.9em;
+    font-weight: 300;
+    line-height: 1.8em;
+    text-align: justify;
+    color: #150101;
+}
+
+
+.places{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.halls{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 0.6rem;   
+}
+.hall{
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 0.2rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    background: rgb(233,233,233);;
+}
+
+.places input:checked+label{
+    background: #e40c0c;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+
+
+.book-btn{
+    color: #ffffff;
+    background-color: #e40c0c;
+    padding: 0.2rem 0.5rem
+}
+.book-btn:hover{
+    background-color: #6e0c0c;
+}
+
+
+
+
+@media (max-width: 992px) {
+
+    .header{
+        padding: 1.3rem 5%;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .icons{
+        display: inline-flex;
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    .user-name{
+        display: none;
+    }
+
+    .navbar{
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 9rem;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    }
+
+      .navbar.active {
+        display: block;
+  }
+
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+
+
+}

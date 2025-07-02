@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to top, #150101, #6e0c0c, #e40c0c);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 3%;
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+.logo{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+
+
+.profile{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2rem; 
+}
+
+
+
+.icons{
+    position: absolute;
+    right: 10%;
+    font-size: 2.8rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+}
+
+main{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.container{
+    
+    
+    height: 400px;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text{
+    width: 80%;
+}
+.hero-text h1{
+    font-size: 3.3rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.hero-text p{
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.check-btn{
+    padding: 1em 2.1em 1.1em;
+    border-radius: 8px;
+    margin: 8px;
+    border: none;
+    background-color: #ffffff;
+    color: #6e0c0c;
+    font-size: 0.85em;
+    text-align: center;
+    box-shadow: 0em -0.2rem 0em #000000 inset;
+    font-weight: bold;
+
+}
+
+.check-btn:hover{
+    background-color: transparent;
+    color: #ffffff;
+    border: 3px solid #000000;
+}
+
+h2{
+    color: #ffffff;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-left: 2px solid #ffffff ;
+    padding-left: 20px;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.card{
+    width: 325px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0,2);
+    margin: 20px;
+}
+
+.card img{
+    width: 100%;
+    height: 400px;
+}
+
+.card-content{
+    padding: 16px;
+
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    margin: 0.6em 0 0.9em 0;
+    color: #6e0c0c;
+}
+
+.card-content h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-content p{
+    color: #000000;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.card-content .btn{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #6e0c0c;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #ffffff;
+}
+
+@media (max-width: 992px) {
+
+    .header{
+        padding: 1.3rem 5%;
+    }
+
+    .container{
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .hero-text{
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-text h1{
+        font-size: 3rem;
+    }
+
+
+}
+
+@media (max-width: 450px) {
+
+    .icons{
+        display: inline-flex;
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    .user-name{
+        display: none;
+    }
+    .navbar{
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 9rem;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    }
+
+      .navbar.active {
+        display: block;
+  }
+
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+
+    .h2{
+        margin-top: 30px;
+        padding-top: 40px;
+    }
+
+    main{
+    margin-bottom: 70px;
+}
+
+
+}
