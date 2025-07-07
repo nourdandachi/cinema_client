@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchAuditoriumLayout(auditoriumId) {
     try {
-      const response = await axios.get("../../cinema_server/controllers/get_auditoriums.php", {
+      const response = await axios.get("../../cinema_server/auditoriums", {
         params: { id: auditoriumId }
       });
 
-      if (response.data.status === 200 && response.data.auditorium) {
-        return JSON.parse(response.data.auditorium.seat_layout);
+      if (response.data.status === 200 && response.data.payload) {
+        return JSON.parse(response.data.payload[0].seat_layout);
       }
     } catch {
       return null;

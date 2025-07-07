@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       const response = await axios.post(
-        '../../cinema_server/controllers/login.php',
+        '../../cinema_server/login',
         JSON.stringify(data),
         {
           headers: {
@@ -34,8 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
       );
 
       if (response.data.status === 200) {
-        localStorage.setItem('user_id', response.data.user.id);
-        localStorage.setItem('full_name', response.data.user.full_name);
+        localStorage.setItem('user_id', response.data.payload.id);
+        localStorage.setItem('full_name', response.data.payload.full_name);
+
         if(data.email === "admin@gmail.com"){
           window.location.href = '../pages/dashboard.html';
         }else{
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
       } else {
-        alert(response.data.message || 'Login failed.');
+        alert('Login failed.');
       }
     } catch (error) {
       console.error('Login error:', error);

@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchMovieDetails() {
     try {
-        const response = await axios.get(`../../cinema_server/controllers/get_movies.php`);
+        const response = await axios.get(`../../cinema_server/movies`);
 
         if (response.data.status === 200) {
 
-            const movies = response.data.movies;
+            const movies = response.data.payload;
             movies.forEach(movie => {
             container.innerHTML += `
                 <div class="movie-item">
