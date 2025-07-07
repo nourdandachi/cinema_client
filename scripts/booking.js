@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchAuditoriumLayout(auditoriumId) {
     try {
-      const response = await axios.get("../../cinema_server/controllers/get_auditoriums.php", {
+      const response = await axios.get("../../cinema_server/auditoriums", {
         params: { id: auditoriumId }
       });
 
-      if (response.data.status === 200 && response.data.auditorium) {
-        return JSON.parse(response.data.auditorium.seat_layout);
+      if (response.data.status === 200 && response.data.payload) {
+        return JSON.parse(response.data.payload[0].seat_layout);
       }
     } catch {
       return null;
@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchSeatsByAuditoriumId(auditoriumId) {
     try {
-      const response = await axios.get("../../cinema_server/controllers/get_seats_by_auditorium_id.php", {
+      const response = await axios.get("../../cinema_server/controllers/seats_by_auditorium_id", {
         params: { auditorium_id: auditoriumId }
       });
 
-      return response.data.status === 200 ? response.data.seats : [];
+      return response.data.status === 200 ? response.data.payload : [];
     } catch {
       return [];
     }
@@ -65,13 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchShowtimes(movieId, auditoriumId) {
     try {
-      const response = await axios.post("../../cinema_server/controllers/get_showtimes_by_movie_and_hall.php", {
+      const response = await axios.post("../../cinema_server/controllers/find_showtimes_by_movie_and_auditorium", {
         movie_id: movieId,
         auditorium_id: auditoriumId
       });
 
-      if (response.data.status === 200 && response.data.dates.length > 0) {
-        displayShowDates(response.data.dates);
+      if (response.data.status === 200 && response.data.payload.length > 0) {
+        displayShowDates(response.data.payload);
       }
     } catch {}
   }
@@ -134,14 +134,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchShowtimeId(movieId, auditoriumId, date, time) {
     try {
-      const response = await axios.post("../../cinema_server/controllers/get_showtime_by_date_and_time.php", {
+      const response = await axios.post("../../cinema_server/controllers/find_showtimes_by_date_and_time", {
         movie_id: movieId,
         auditorium_id: auditoriumId,
         date,
         time
       });
 
-      return response.data.status === 200 ? response.data.showtime_id : null;
+      return response.data.status === 200 ? response.data.payload.showtime_id : null;
     } catch {
       return null;
     }
@@ -149,11 +149,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchBookedSeats(showtimeId) {
     try {
-      const response = await axios.post("../../cinema_server/controllers/get_booked_seats.php", {
+      const response = await axios.post("../../cinema_server/controllers/bookedseats", {
         showtime_id: showtimeId
       });
 
-      return response.data.status === 200 ? response.data.booked_seats : [];
+      return response.data.status === 200 ? response.data.payload : [];
     } catch {
       return [];
     }
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    const bookingRes = await axios.post("../../cinema_server/controllers/add_booking.php", {
+    const bookingRes = await axios.post("../../cinema_server/controllers/add_booking", {
       user_id: user_id,
       showtime_id: showtimeId,
       total_price: totalPrice,
@@ -253,15 +253,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    if (bookingRes.data.status !== 200 || !bookingRes.data.booking_id) {
+    if (bookingRes.data.status !== 200 || !bookingRes.data.payload.booking_id) {
       alert("Booking failed: " + (bookingRes.data.message || "Unknown error"));
       return;
     }
 
-    const bookingId = bookingRes.data.booking_id;
+    const bookingId = bookingRes.data.payload.booking_id;
 
     for (let seat of selectedSeats) {
-      const seatBookingRes = await axios.post("../../cinema_server/controllers/add_booked_seat.php", {
+      const seatBookingRes = await axios.post("../../cinema_server/controllers/add_booked_seat", {
         booking_id: bookingId,
         seat_id: seat.dataset.id,
         price: seat.dataset.price

@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchMovieDetails() {
     try {
-        const response = await axios.get(`../../cinema_server/controllers/get_movies.php`, {
+        const response = await axios.get(`../../cinema_server/movies`, {
         params: { id: movieId }
         });
 
         if (response.data.status === 200) {
 
-            const movie = response.data.movies;
+            const movie = response.data.payload[0];
             console.log("Movie found:", movie);
 
             result.innerHTML = `
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <span>${movie.duration_minutes} min</span>
                         </div>
                         <div class="genre">
-                            ${movie.genre.split(",").map(g => `<div>${g.trim()}</div>`).join("")}
+                            
                         </div>
                     </div>
                 </div>
@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchAuditoriums() {
         try {
-            const response = await axios.get(`../../cinema_server/controllers/get_auditoriums.php`);
+            const response = await axios.get(`../../cinema_server/auditoriums`);
 
             if (response.data.status === 200) {
-            const auditoriums = response.data.auditoriums;
+            const auditoriums = response.data.payload;
 
             let html = "";
 

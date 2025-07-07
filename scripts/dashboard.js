@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
       const response = await axios.post(
-        '../../cinema_server/controllers/add_movie.php',
+        '../../cinema_server/controllers/add_movie',
         JSON.stringify(data),
         {
           headers: {

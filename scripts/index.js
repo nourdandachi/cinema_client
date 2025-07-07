@@ -32,13 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
   async function fetchHighestMovies() {
     try {
         
-      const response = await axios.get(`../../cinema_server/controllers/get_highest_ratings.php`);
+      const response = await axios.get(`../../cinema_server/controllers/get_highest_rating`);
 
         if (response.data.status === 200) {
 
             if (response.data.status === 200) {
 
-            const movies = response.data.movies;
+            const movies = response.data.payload.movies;
               movies.forEach(movie => {
                 card_container.innerHTML += `
                   <div class="card">
@@ -59,8 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
               
 
           }
-        } else {
-            console.error("Error:", response.data.message);
         }
 
     } catch (error) {

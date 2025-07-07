@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       const response = await axios.post(
-        '../../cinema_server/controllers/register.php',
+        '../../cinema_server/register',
         JSON.stringify(data),
         {
           headers: {
