@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
       const response = await axios.post(
-        '../../cinema_server/controllers/update_user.php',
+        '../../cinema_server/controllers/update_user',
         JSON.stringify(data),
         {
           headers: {
